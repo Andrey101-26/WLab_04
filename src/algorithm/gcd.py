@@ -12,7 +12,8 @@ def _validate(a: int, b: int) -> None:
 def gcd_iterative(a: int, b: int) -> int:
     """Вычисляет НОД, обновляя пару чисел в цикле."""
     _validate(a, b)
-    a, b = abs(a), abs(b)
+    a = abs(a)
+    b = abs(b)
     while b != 0:
         remainder = a % b
         a = b

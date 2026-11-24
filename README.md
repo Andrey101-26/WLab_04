@@ -4,10 +4,18 @@
 
 ## Запуск
 
-Из корня проекта в активном виртуальном окружении:
+В PowerShell из корня проекта. Команды используют Python из папки .venv напрямую. Для настройки окружения используется uv. Если .venv ещё нет, сначала выполните uv venv.
 
 ```powershell
-python -m pip install -e ".[test]"
+uv pip install --python .venv/Scripts/python.exe -e ".[test]"
+.\.venv\Scripts\python.exe -m pytest
+.\.venv\Scripts\python.exe -m algorithm.benchmark --output benchmark.csv
+```
+
+В Git Bash можно активировать окружение один раз, а затем использовать команду python:
+
+```bash
+source .venv/Scripts/activate
 python -m pytest
 python -m algorithm.benchmark --output benchmark.csv
 ```
